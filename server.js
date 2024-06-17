@@ -14,6 +14,19 @@ server.use(
 server.use(express.json());
 server.use(express.urlencoded({ limit: "50mb", extended: true }));
 
+// Logging middleware
+server.use((req, res, next) => {
+  const log = `
+PATH :: ${req.path}
+  METHOD :: ${req.method}
+  PARAMS :: ${JSON.stringify(req.params)}
+  QUERY :: ${JSON.stringify(req.query)}
+  BODY :: ${JSON.stringify(req.body)}
+
+  `;
+  console.debug(log);
+  next();
+});
 // Error handling middleware
 server.use((err, req, res, next) => {
   console.error(err.stack);

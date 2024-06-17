@@ -1,6 +1,5 @@
 require("./env");
 
-const setupSwagger = require("./swagger");
 const setupSocketIO = require("./socketio");
 const setupMongoDB = require("./mongo_db");
 
@@ -9,7 +8,6 @@ function setup(
   { newConnectionHandler, socketDisconnectionHandler } = {}
 ) {
   setupMongoDB();
-  setupSwagger(server);
   setupSocketIO(server, newConnectionHandler, socketDisconnectionHandler);
 }
 

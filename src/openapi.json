@@ -1,0 +1,34 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Investment by Jodna Technologies",
+    "description": "Investment REST API Documentation",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Miracle Apata",
+      "url": "https://github.com/prmpsmart",
+      "email": "prmpsmart@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://token-realty.onrender.com/api/",
+      "description": "Remote Host - PRMPSMART"
+    },
+    {
+      "url": "http://localhost:8000/api/",
+      "description": "Local Server"
+    }
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {},
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
